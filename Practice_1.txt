@@ -1,0 +1,129 @@
+#include <iostream>
+#include <math.h>
+
+/*
+
+  programmer: ErfanGanji
+
+  It is written in history: 2024/3/5
+
+*/
+
+using namespace std;
+
+
+void math()
+{
+    float ax = 0;
+    float bx = 0;
+    float c = 0;
+
+    cout << endl <<"Enter Parameter: ";
+    cin >> ax >> bx >> c;
+
+    float d = pow(bx, 2) - (4 * ax * c);
+
+    float a1 = 0;
+    float a2 = 0;
+
+    float r = 0;
+    float i = 0;
+
+
+    if (d >= 0)
+    {
+        a1 = ((-bx) + sqrt(d)) / (2 * ax);
+        a2 = ((-bx) - sqrt(d)) / (2 * ax);
+
+        cout << "A1: " << a1 << endl;
+        cout << "A2: " << a2 << endl;
+    }
+    else
+    {
+        r = (-bx) / (2 * ax);
+        i = sqrt(-d) / (2 * ax);
+
+        cout << "A: " << r << "+-" << i << endl;
+    }
+}
+
+void old()
+{
+    cout << endl;
+
+    unsigned int year;
+    unsigned int month;
+    unsigned int day;
+
+    unsigned int birthYear;
+    unsigned int birthMonth;
+    unsigned int birthDay;
+
+    int y;
+    int m;
+    int d;
+
+    // Give deta
+    cout << "------------------- Today's date -------------------" << "\n";
+    cout << "Enter Year: ";
+    cin >> year;
+
+
+    cout << "Enter Month: ";
+    cin >> month;
+
+
+    cout << "Enter Day: ";
+    cin >> day;
+
+    cout << "------------------- Enter date of birth -------------------" << "\n";
+
+    cout << "Enter BirthYear: ";
+    cin >> birthYear;
+
+
+    cout << "Enter BirthMonth: ";
+    cin >> birthMonth;
+
+
+    cout << "Enter BirthDay: ";
+    cin >> birthDay;
+
+
+    (birthMonth < month) ? y = (year - birthYear) : y = ((year - birthYear) - 1);
+
+    (birthMonth < month) ? (m = month - birthMonth) : month = 12 - (birthMonth - month);
+
+    (birthDay < day) ? (d = day - birthDay) : d = (day + 30) - birthDay;
+
+    cout << endl;
+
+    cout << "You have lived for: " << y << " year " << m << " month " << "and " << d << " day.";
+
+    cout << endl;
+
+}
+
+
+int main()
+{
+
+    int mod = 0;
+    cout << "If you want to solve an equation, enter the number (1), and if you want to know your exact age, enter the number (2) " << endl << endl <<"Enter your number mood: ";
+    cin >> mod;
+
+    if (mod == 1)
+    {
+        math();
+    }
+    else if  (mod == 2)
+    {
+        old();
+    }
+    else
+    {
+        cout << "The number you entered is incorrect!";
+    }
+
+}
+
